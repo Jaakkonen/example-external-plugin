@@ -10,6 +10,9 @@ import net.runelite.client.plugins.PluginType
 import org.pf4j.Extension
 import javax.inject.Inject
 
+import org.graalvm.polyglot.*;
+import org.graalvm.polyglot.proxy.*;
+
 @Extension
 @PluginDescriptor(
         name = "Kotlin example",
@@ -41,6 +44,10 @@ class KotlinExamplePlugin : Plugin() {
             // do stuff
             log.info("The value of 'config.example()' is ${config.example()}")
         }
+
+        var context = Context.create()
+        context.eval("python", "print('Hello Python!')")
+
     }
 
     override fun shutDown() {

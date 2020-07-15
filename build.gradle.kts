@@ -12,12 +12,14 @@ project.extra["GithubUrl"] = "http://github.com/<INSERT NAME>/<INSERT REPOSITORY
 
 apply<BootstrapPlugin>()
 
+
+
 subprojects {
     group = "com.example"
 
-    project.extra["PluginProvider"] = ""
+    project.extra["PluginProvider"] = "Jake"
     project.extra["ProjectSupportUrl"] = ""
-    project.extra["PluginLicense"] = "3-Clause BSD License"
+    project.extra["PluginLicense"] = "GPLv3"
 
     repositories {
         jcenter {
